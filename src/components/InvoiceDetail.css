@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+
+/* ════════════════════════════════
+   INVOICE DETAIL
+   ════════════════════════════════ */
+.go-back {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 0;
+  font-family: "Spartan", sans-serif;
+  margin-bottom: 32px;
+}
+
+.go-back:hover span {
+  color: #7e88c3;
+}
+
+.detail-card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 48px;
+  margin-bottom: 16px;
+}
+
+.detail-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  gap: 16px;
+}
+
+.detail-status-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #888eb0;
+  font-size: 13px;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 8px;
+  
+}
+
+.detail-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.detail-id {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.detail-id span {
+  color: #7e88c3;
+}
+
+.detail-desc {
+  color: #888eb0;
+  font-size: 13px;
+}
+
+.detail-address {
+  color: #888eb0;
+  font-size: 13px;
+  line-height: 1.8;
+  text-align: right;
+}
+
+.detail-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: left;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.detail-meta-label {
+  font-family:
+    League Spartan,
+    sans-serif;
+  color: #7e88c3; /*#888EB0;*/
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.detail-meta-value {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.detail-client-address {
+  color: #888eb0;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-top: 8px;
+}
+
+/* ── Items table ── */
+.items-table-wrap {
+  background: var(--bg-item);
+  border-radius: 8px 8px 0 0;
+  padding: 24px 32px;
+}
+
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.items-table th {
+  font-size: 11px;
+  color: var(--text3);
+  font-weight: 500;
+  text-align: left;
+  padding-bottom: 16px;
+}
+
+.items-table td {
+  padding: 8px 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.items-table td.muted {
+  color: var(--text3);
+}
+
+.items-table th:not(:first-child),
+.items-table td:not(:first-child) {
+  text-align: right;
+}
+
+.total-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 32px;
+  border-radius: 0 0 8px 8px;
+}
+
+.dark .total-bar {
+  background: #0c0e16;
+}
+.light .total-bar {
+  background: #373b53;
+}
+
+.total-bar__label {
+  color: #dfe3fa;
+  font-size: 13px;
+}
+.total-bar__amount {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+/* Mobile detail footer */
+.detail-footer-mobile {
+  background: var(--bg-card);
+  padding: 20px 40px;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+.items-table-wrap-mobile{
+    display:none;
+}
+.td-span-container
+{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+  .detail-card {
+    padding: 24px;
+  }
+
+  .detail-meta-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .detail-actions {
+    display: none;
+  }
+
+  .detail-footer-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    padding: 20px 0px;
+    z-index: 10;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+  }
+  .detail-status-label {
+    justify-content: space-between;
+    width:100vw;
+  }
+  .sendTo{
+    text-align:left;
+    overflow-wrap:break-word;
+  }
+
+  .items-table-wrap{
+    display:none;
+  }
+  .items-table-wrap-mobile{
+    display:block;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .detail-footer-mobile {
+    display: none;
+  }
+  .detail-actions{
+    display:flex;
+    margin:0;
+    padding:2px;
+    gap:0;
+  }
+  .detail-status-label{
+    display:flex;
+    justify-content:flex-start;
+    margin:0;
+  }
+  .detail-status-bar{
+    display:flex;
+    flex-direction:row;
+    gap:0;
+    padding:0;
+    margin:0;
+  }
+  .middle-info{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    gap:0;
+    margin:0
+  }
+
+  .sendTo p{
+    margin:0;
+  }
+}

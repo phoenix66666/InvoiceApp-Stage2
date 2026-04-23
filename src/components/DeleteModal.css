@@ -1,0 +1,58 @@
+/* ════════════════════════════════
+   MODAL
+   ════════════════════════════════ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  pointer-events:none;
+}
+
+.modal {
+  position:fixed;
+  top:300px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 48px;
+  max-width: 480px;
+  width: 100%;
+  text-align:left;
+   z-index:400;
+}
+
+
+.modal__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.modal__body {
+  color: #888EB0;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.modal__actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+    .modal_actions{
+        display: flex;
+        flex-direction:row;
+        gap:0;
+        padding:0;
+    }
+    .modal{
+        padding:20px;
+    }
+}

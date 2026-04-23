@@ -1,0 +1,62 @@
+/* ════════════════════════════════
+   FILTER DROPDOWN
+   ════════════════════════════════ */
+.filter-wrapper { position: relative; }
+
+.filter-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.filter-toggle svg { transition: transform 0.2s; }
+.filter-toggle.open svg { transform: rotate(180deg); }
+
+.filter-dropdown {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 24px;
+  min-width: 192px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.filter-option-label {
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: capitalize;
+  color: var(--text);
+}

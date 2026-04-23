@@ -1,0 +1,16 @@
+/* ════════════════════════════════
+   EMPTY STATE
+   ════════════════════════════════ */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  gap: 40px;
+}
+
+.empty-state__text { text-align: center; }
+.empty-state__title { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+.empty-state__body  { color: #888EB0; font-size: 13px; line-height: 1.7; max-width: 220px; }
+

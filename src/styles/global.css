@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Theme tokens ── */
+.dark {
+  --bg: #141625;
+  --bg-card: #1e2139;
+  --bg-input: #1e2139;
+  --bg-item: #252945;
+  --text: #ffffff;
+  --text2: #dfe3fa;
+  --text3: #888eb0;
+  --border: #252945;
+  --border-input: #252945;
+}
+
+.light {
+  --bg: #f8f8fb;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --bg-item: #f9fafe;
+  --text: #0c0e16;
+  --text2: #888eb0;
+  --text3: #7e88c3;
+  --border: #dfe3fa;
+  --border-input: #dfe3fa;
+}
+body {
+  font-family: "Spartan", sans-serif;
+  min-height: 100vh;
+}
+/* ── App root ── */
+.app-root {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  transition:
+    background 0.3s,
+    color 0.3s;
+  display: flex;
+  transform: translate(0, 0);
+  will-change: transform;
+}
+
+.showForm-container {
+  position: absolute;
+  left: 72px;
+}
+
+.main-content {
+  padding-left: 180px;
+  min-height: 100vh;
+}
+
+/* ── Page container ── */
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 24px 40px;
+}
+
+/* ── Scrollbar ── */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #dfe3fa;
+  height: 20%;
+  border-radius: 4px;
+}
+/* Track */
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+  border: 4px solid transparent;
+  background-clip: content-box; /* THIS IS IMPORTANT */
+}
+.scrollbar-thin::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  margin-bottom: 100px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  margin-top: 15px;
+}
+
+/* ── Section divider ── */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+/* ── Native input/select resets ── */
+input,
+select,
+textarea {
+  font-family: "Spartan", sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #7c5dfa !important;
+}
+
+input::placeholder {
+  color: var(--text3);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+  filter: invert(0.5);
+  cursor: pointer;
+}
+
+/* ════════════════════════════════
+   BUTTONS
+   ════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 24px;
+  border-radius: 24px;
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  border: none;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: #7c5dfa;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #9277ff;
+}
+
+.btn-secondary {
+  background: #f9fafe;
+  color: #7e88c3;
+}
+.dark .btn-secondary {
+  background: #252945;
+  color: #dfe3fa;
+}
+.btn-secondary:hover {
+  background: #dfe3fa;
+  color: #7e88c3;
+}
+.dark .btn-secondary:hover {
+  background: #dfe3fa;
+  color: #0c0e16;
+}
+
+.btn-danger {
+  background: #ec5757;
+  color: #fff;
+}
+.btn-danger:hover {
+  background: #ff9797;
+}
+
+.btn-dark {
+  background: #373b53;
+  color: #888eb0;
+}
+.btn-dark:hover {
+  background: #0c0e16;
+  color: #dfe3fa;
+}
+.dark .btn-dark {
+  background: #373b53;
+  color: #dfe3fa;
+}
+.dark .btn-dark:hover {
+  background: #dfe3fa;
+  color: #0c0e16;
+}
+/* ════════════════════════════════
+   RESPONSIVE HELPERS
+   ════════════════════════════════ */
+.label-short { display: none; }
+
+@media (max-width: 600px) {
+  .label-full  { display: none; }
+  .label-short { display: inline; }
+}
+
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .app-root {
+    flex-direction: column;
+  }
+  .main-content {
+    padding-left: 0;
+    padding-bottom: 72px;
+  }
+  .page {
+    padding: 72px 2px 40px;
+    max-width: 450px;
+  }
+  .btn {
+    padding: 16px 18px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .app-root {
+    flex-direction: column;
+  }
+
+  .page {
+    padding: 72px 0 20px;
+    max-width: 720px;
+    margin: auto;
+  }
+  .main-content {
+    padding-left: 0;
+    padding-bottom: 72px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    padding: 72px 0 20px;
+    width: 780px;
+  }
+}
