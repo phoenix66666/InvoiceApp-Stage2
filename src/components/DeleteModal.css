@@ -25,6 +25,9 @@
    z-index:400;
 }
 
+.modal h2{
+  color:var(--text);
+}
 
 .modal__title {
   font-size: 24px;
